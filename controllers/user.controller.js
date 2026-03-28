@@ -51,9 +51,10 @@ export const fetchUser = asyncHandler(async (req, res, next) => {
      const user = await User.findById(req.user._id);
      
      await res.status(200).json({
-          message: "users",})
+          message: user,})
 })
 export const fetchUsers = asyncHandler(async (req, res, next) => {
+     const users = await User.find();
      await res.status(200).json({
-          message: "users",})
+          message: users,})
 })

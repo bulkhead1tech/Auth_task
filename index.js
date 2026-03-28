@@ -22,8 +22,9 @@ app.use(express.urlencoded({extended:true}))
 app.get("/", (req, res) => {
   res.send("hello");
 });
+app.use(cookieParser());
+
 app.use("/api/v1/user", users);
 app.use("/api/v1/note", notes);
 
-app.use(cookieParser())
 app.use(errorHandler)
