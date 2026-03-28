@@ -13,9 +13,9 @@ const router = express.Router();
 
 router.route('/register').post(registerUser);
 router.route("/login").post(loginUser);
-router.route("/getAllUsers").get(isAdmin, fetchUsers);
 router.route("/logout").get(logoutUser);
 router.route("/me").get(isAuthenticated, fetchUser);
+router.route("/getAllUsers").get(isAdmin, fetchUsers);
 
 
 
